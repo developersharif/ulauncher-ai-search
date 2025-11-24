@@ -1,0 +1,20 @@
+{
+  "keyword": {
+    "type": "keyword",
+    "name": "Trigger Keyword",
+    "description": "The keyword to trigger the extension (can be any word, phrase, or character - e.g., 'ai', 'ask ai', '?')",
+    "default_value": "ai"
+  },
+  "default_engine_id": {
+    "type": "text",
+    "name": "Default Engine ID",
+    "description": "The engine ID to use when no specific engine is specified",
+    "default_value": "googleai"
+  },
+  "engines_config": {
+    "type": "text",
+    "name": "Engines Configuration (JSON)",
+    "description": "JSON array of search engines with id, name, url_template, and icon",
+    "default_value": "[{\"id\": \"googleai\", \"name\": \"Google AI Mode\", \"url_template\": \"https://www.google.com/search?udm=50&q=%s\", \"icon\": \"fa-brain\"}, {\"id\": \"chatgpt\", \"name\": \"ChatGPT\", \"url_template\": \"https://chatgpt.com/?prompt=%s\", \"icon\": \"fa-robot\"}, {\"id\": \"perplexity\", \"name\": \"Perplexity AI\", \"url_template\": \"https://www.perplexity.ai/search?q=%s\", \"icon\": \"fa-search\"}, {\"id\": \"google\", \"name\": \"Google Search\", \"url_template\": \"https://www.google.com/search?q=%s\", \"icon\": \"fa-search\"}, {\"id\": \"duckduckgo\", \"name\": \"DuckDuckGo\", \"url_template\": \"https://duckduckgo.com/?q=%s\", \"icon\": \"fa-search\"}]"
+  }
+}
