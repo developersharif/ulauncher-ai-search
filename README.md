@@ -1,5 +1,7 @@
 # AI & Custom Search - Ulauncher Extension
 
+[![Ulauncher Extension](https://img.shields.io/badge/Ulauncher-Extension-blue)](https://ext.ulauncher.io/-/github-developersharif-ulauncher-ai-search)
+
 A flexible Ulauncher extension that enables searching multiple AI services and custom web engines with dynamic syntax.
 
 ## Features
@@ -73,7 +75,7 @@ Opens the query in the default engine (Google AI Mode).
 
 ### Specific Engine Search
 ```
-ai:chatgpt Write a python script
+ai :chatgpt Write a python script
 ```
 OR
 ```
