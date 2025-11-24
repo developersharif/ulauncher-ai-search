@@ -15,7 +15,7 @@ A flexible Ulauncher extension that enables searching multiple AI services and c
    ```bash
    mkdir -p ~/.local/share/ulauncher/extensions
    cd ~/.local/share/ulauncher/extensions
-   git clone https://github.com/yourusername/ulauncher-ai-search.git com.github.ulauncher.ai-search
+   git clone https://github.com/developersharif/ulauncher-ai-search.git com.github.ulauncher.ai-search
    ```
 
 2. Restart Ulauncher:
