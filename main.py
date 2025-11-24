@@ -57,25 +57,37 @@ class KeywordQueryEventListener(EventListener):
         engines_dict = {engine["id"]: engine for engine in engines}
         
         # Determine search mode and extract components
+        # Get query and strip leading/trailing whitespace
+        query = (event.get_argument() or "").strip()
+        
         engine_id = None
         search_query = None
         
+        # Logic 1: Check for ":engine" syntax (e.g. ":chatgpt query")
         if query.startswith(":"):
-            query_without_colon = query[1:]
-            if " " in query_without_colon:
-                engine_id, search_query = query_without_colon.split(" ", 1)
-            else:
-                engine_id = query_without_colon
-                search_query = ""
-            engine_id = engine_id.strip()
-            search_query = search_query.strip()
+            # Remove colon and strip leading whitespace (e.g. ": chatgpt" -> "chatgpt")
+            content = query[1:].strip()
             
+            # Split by space to get engine_id
+            if " " in content:
+                engine_id, search_query = content.split(" ", 1)
+            else:
+                engine_id = content
+                search_query = ""
+            
+        # Logic 2: Check for "engine:" syntax (e.g. "chatgpt: query")
         elif ":" in query:
             parts = query.split(":", 1)
             potential_id = parts[0].strip()
             if potential_id in engines_dict:
                 engine_id = potential_id
                 search_query = parts[1].strip() if len(parts) > 1 else ""
+
+        if engine_id:
+            engine_id = engine_id.strip()
+        
+        if search_query:
+            search_query = search_query.strip()
 
         if engine_id:
             if engine_id not in engines_dict:
